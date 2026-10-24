@@ -317,7 +317,7 @@ main, footer { position: relative; z-index: 1; }
 }
 
 
-/* ---------- featured: WinWinX ---------- */
+/* ---------- featured: P2P marketplace ---------- */
 .feat { padding-block: 18vh 14vh; display: grid; gap: 72px; }
 .feat-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center; }
 @media (max-width: 940px) { .feat-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; } }
@@ -325,6 +325,9 @@ main, footer { position: relative; z-index: 1; }
 .feat-tags { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .pill-main { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: 7px 12px; border-radius: 99px; color: #fff; background: linear-gradient(90deg, var(--blue), var(--cyan)); box-shadow: 0 0 24px color-mix(in srgb, var(--blue) 50%, transparent); }
 .feat-name { white-space: nowrap; font-family: var(--f-display); font-weight: 900; font-variation-settings: "wdth" 125, "wght" 900; font-size: clamp(3rem, 7.6vw, 7.4rem); line-height: .86; letter-spacing: -0.04em; text-transform: uppercase; overflow: hidden; padding-bottom: .04em; }
+.feat-name .row { display: block; white-space: nowrap; overflow: hidden; padding-bottom: .04em; }
+.feat-name .r2 { font-size: .56em; letter-spacing: -0.03em; }
+.feat-name .r1 .ch { background: linear-gradient(180deg, var(--cyan) 10%, var(--blue) 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; }
 .feat-name .ch { background: linear-gradient(180deg, var(--ink) 20%, var(--blue) 110%); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .feat-lede { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink); max-width: 46ch; }
 .feat-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
@@ -625,19 +628,15 @@ footer a:hover { color: var(--ink); }
     <div class="wrap feat">
       <div class="feat-grid">
         <div class="feat-copy">
-          <div class="feat-tags"><span class="pill-main">Main project</span><span class="label">Peer-to-peer marketplace</span></div>
-          <h2 class="feat-name" id="featname">WinWinX</h2>
-          <p class="feat-lede fx">A peer-to-peer marketplace where people buy and sell with confidence. Every member is verified, every account carries a TrustScore, buyers and sellers chat in real time, and shoppers earn WWX Cash Perks.</p>
+          <div class="feat-tags"><span class="pill-main">Main project</span><span class="label">Web · iOS · Android</span></div>
+          <h2 class="feat-name" id="featname" aria-label="P2P Marketplace"><span class="row r1">P2P</span><span class="row r2">Marketplace</span></h2>
+          <p class="feat-lede fx">A peer-to-peer marketplace where people buy and sell with confidence. Every member is verified, every account carries a trust score, buyers and sellers chat in real time, and shoppers earn rewards.</p>
           <ul class="feat-points fx">
             <li>Shop and sell flows with instant product search</li>
             <li>Identity verification and fraud protection on sign-up</li>
-            <li>TrustScore, community, public wishlists and rewards</li>
+            <li>Trust scores, community, public wishlists and rewards</li>
             <li>Payments, payouts and sales tax handled end to end</li>
           </ul>
-          <div class="feat-cta fx">
-            <a class="btn mag" href="https://winwinx.com/" target="_blank" rel="noopener" data-cursor="Visit"><span>Visit winwinx.com</span><span class="arr">↗</span></a>
-            <span class="label">Web · iOS · Android</span>
-          </div>
         </div>
         <div class="feat-visual" id="featvisual">
           <div class="feat-frame tiltable"><canvas data-kind="market" aria-hidden="true"></canvas></div>
@@ -657,7 +656,7 @@ footer a:hover { color: var(--ink); }
           <div class="integ"><b>Typesense</b><span>Instant, typo-tolerant product search</span></div>
           <div class="integ"><b>TaxJar</b><span>Automatic sales tax on every order</span></div>
           <div class="integ"><b>Twilio</b><span>SMS and phone number verification</span></div>
-          <div class="integ"><b>adjoe</b><span>Rewarded engagement behind WWX Cash Perks</span></div>
+          <div class="integ"><b>adjoe</b><span>Rewarded engagement for shoppers</span></div>
       </div>
       </div>
     </div>
@@ -959,7 +958,7 @@ footer a:hover { color: var(--ink); }
     if (ratio < 1) el.style.fontSize = (fs * ratio * 0.97) + 'px';
     chs.forEach((c, i) => { c.style.setProperty('--w', saved[i][0]); c.style.transform = saved[i][1]; });
   }
-  const fitAll = () => { fit($('#name'), nameRows); fit($('#talk'), talkRows); const fn = $('#featname'); if (fn) fit(fn, [fn], 125); };
+  const fitAll = () => { fit($('#name'), nameRows); fit($('#talk'), talkRows); const fn = $('#featname'); if (fn) fit(fn, [...fn.querySelectorAll('.row')], 125); };
   fitAll();
   addEventListener('load', () => fitAll());
   if (document.fonts) { try { document.fonts.addEventListener('loadingdone', () => fitAll()); } catch (e) {} }
@@ -1289,7 +1288,7 @@ footer a:hover { color: var(--ink); }
         rr(ix, iy, iw, 28, 14, c.bg, c.line); x.beginPath(); x.arc(ix + 14, iy + 14, 5, 0, 7); x.strokeStyle = c.cy; x.lineWidth = 2; x.stroke(); rr(ix + 26, iy + 11, iw * .45, 6, 3, c.mut); iy += 40;
         const cw2 = (iw - 10) / 2, chh = cw2 * 1.25;
         for (let k = 0; k < 4; k++) { const cx2 = ix + (k % 2) * (cw2 + 10), cy2 = iy + Math.floor(k / 2) * (chh + 10); rr(cx2, cy2, cw2, chh, 12, c.bg, c.line); const ig = x.createLinearGradient(cx2, cy2, cx2 + cw2, cy2 + chh * .6); ig.addColorStop(0, k % 3 ? '#1D3A9E' : '#2F6BFF'); ig.addColorStop(1, k % 2 ? '#3FD0FF' : '#11245F'); rr(cx2 + 5, cy2 + 5, cw2 - 10, chh * .58, 9, ig); rr(cx2 + 7, cy2 + chh * .68, cw2 * .6, 5, 2, c.ink); rr(cx2 + 7, cy2 + chh * .8, cw2 * .35, 6, 3, c.cy); }
-        // TrustScore card
+        // trust score card
         const tx = W * .56, ty = H * .12, tw = W * .36, th = H * .34;
         x.shadowColor = 'rgba(47,107,255,.5)'; x.shadowBlur = 30; rr(tx, ty, tw, th, 18, c.surf, c.line); x.shadowBlur = 0;
         const rcx = tx + tw * .3, rcy = ty + th * .52, rad = Math.min(tw, th) * .26;
@@ -1512,10 +1511,10 @@ footer a:hover { color: var(--ink); }
     WORDS.forEach(([w, l], i) => {
       if (i) {
         tl.call(() => { wt.textContent = w; fitWord(); lg.textContent = l; lc.textContent = String(i + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0'); }, null, at)
-          .fromTo(wt, { yPercent: 55, autoAlpha: 0, filter: 'blur(6px)' }, { yPercent: 0, autoAlpha: 1, filter: 'blur(0px)', duration: 0.32, immediateRender: false }, at)
-          .fromTo(lg, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2, immediateRender: false }, at);
+          .fromTo(wt, { yPercent: 55, autoAlpha: 0, filter: 'blur(6px)' }, { yPercent: 0, autoAlpha: 1, filter: 'blur(0px)', duration: 0.45, immediateRender: false }, at)
+          .fromTo(lg, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3, immediateRender: false }, at);
       }
-      at += i === 0 ? 0.3 : (i < 3 ? 0.36 : 0.22);
+      at += i === 0 ? 0.7 : 0.55;
     });
     tl.to('#lprog', { scaleX: 1, duration: at, ease: 'power1.inOut' }, 0)
       .to('#lgreet', { autoAlpha: 0, y: -30, filter: 'blur(8px)', duration: 0.4, ease: 'power3.in' }, at)
@@ -1524,7 +1523,7 @@ footer a:hover { color: var(--ink); }
       .from('.l-hi', { y: 16, autoAlpha: 0, duration: 0.6 }, at + 0.25)
       .from('.l-me .mw > span', { yPercent: 110, rotate: 4, duration: 0.9, stagger: 0.08 }, at + 0.3)
       .from('.wave', { scale: 0, rotate: -40, duration: 0.6, ease: 'back.out(2)' }, at + 0.55);
-    const out = at + 1.55;
+    const out = at + 1.4;
     tl.to(['.l-head', '.l-foot'], { autoAlpha: 0, duration: 0.3 }, out - 0.2)
       .to('.l-center', { yPercent: -18, autoAlpha: 0, duration: 0.8, ease: 'power3.in' }, out - 0.1)
       .to('#loader', { yPercent: -100, duration: 1.15, ease: 'power4.inOut' }, out)
@@ -1584,7 +1583,7 @@ footer a:hover { color: var(--ink); }
 
 
   /* featured project */
-  const featChars = splitChars($('#featname'));
+  const featChars = $$('#featname .row').map(splitChars).flat();
   fitAll();
   G.from(featChars, { yPercent: 115, rotate: 6, duration: 1.4, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: '#featname', start: 'top 88%' } });
   G.fromTo(featChars, { '--w': 62 }, { '--w': 125, stagger: 0.04, ease: 'none', scrollTrigger: { trigger: '#featname', start: 'top 90%', end: 'top 45%', scrub: 1 } });
