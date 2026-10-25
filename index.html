@@ -280,87 +280,6 @@ main, footer { position: relative; z-index: 1; }
   .panel .code .ln { animation: none !important; }
 }
 
-/* ---------- work (pinned horizontal) ---------- */
-.work-pin { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; gap: 44px; padding-block: 110px 50px; overflow: hidden; }
-.work-head { width: 100%; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.work-head > div:first-child { display: grid; gap: 16px; }
-.work-meta { display: flex; align-items: center; gap: 16px; min-width: 220px; }
-.work-bar { flex: 1; height: 2px; background: var(--line); overflow: hidden; }
-.work-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); transform-origin: 0 50%; transform: scaleX(0); }
-.work-count { font-family: var(--f-mono); font-size: .8rem; font-variant-numeric: tabular-nums; }
-.work-track { display: flex; gap: 28px; width: max-content; padding-left: max(16px, calc((100vw - var(--wrap)) / 2 + 16px)); padding-right: max(16px, calc((100vw - var(--wrap)) / 2 + 16px)); will-change: transform; }
-.card { flex: 0 0 min(520px, 40vw); display: grid; grid-template-rows: auto 1fr; border-radius: 24px; border: 1px solid var(--line); background: linear-gradient(160deg, var(--card-a), var(--card-b)); backdrop-filter: blur(10px); overflow: hidden; transform-origin: 50% 100%; transition: border-color .4s; }
-.card:hover { border-color: rgba(63, 208, 255, .45); }
-.shot { aspect-ratio: 16 / 10.5; max-width: 100%; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
-.shot canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; transform: scale(1.18); transition: filter .6s; }
-.card:hover .shot canvas { filter: saturate(1.3) brightness(1.15); }
-.tag { position: absolute; top: 14px; left: 14px; font-family: var(--f-mono); font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; padding: 5px 9px; border-radius: 99px; background: var(--glass); border: 1px dashed rgba(63, 208, 255, .6); color: var(--cyan); }
-.card-body { padding: 24px; display: grid; gap: 12px; align-content: start; }
-.card-body h3 { font-family: var(--f-display); font-variation-settings: "wdth" 110, "wght" 700; font-weight: 700; font-size: clamp(1.3rem, 2vw, 1.75rem); line-height: 1.15; }
-.card-body p { color: var(--muted); font-size: .95rem; }
-.card dl { margin: 6px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-family: var(--f-mono); font-size: .74rem; }
-.card dt { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
-.card dd { margin: 0; }
-.card.cta { color: #fff; background: radial-gradient(120% 90% at 100% 0%, var(--cyan), transparent 55%), linear-gradient(160deg, var(--blue), #10237A); border-color: transparent; grid-template-rows: 1fr; }
-.card.cta .card-body { align-content: end; padding: 34px; gap: 18px; min-height: 100%; }
-.card.cta .label { color: rgba(234, 240, 255, .8); }
-.card.cta h3 { font-size: clamp(2rem, 3.6vw, 3.2rem); font-variation-settings: "wdth" 120, "wght" 900; font-weight: 900; line-height: .95; text-transform: uppercase; }
-.card.cta p { color: rgba(234, 240, 255, .85); max-width: 32ch; }
-.card.cta .btn { background: #fff; color: #0A1230; width: fit-content; }
-.card.cta .btn::before { background: #0A1230; }
-.card.cta .btn:hover { color: #fff; }
-@media (max-width: 940px) {
-  .work-track { width: auto; display: grid; gap: 22px; }
-  .card { flex: none; }
-  .card.cta .card-body { min-height: 320px; }
-  .work-meta { display: none; }
-}
-
-
-/* ---------- featured: P2P marketplace ---------- */
-.feat { padding-block: 18vh 14vh; display: grid; gap: 72px; }
-.feat-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: center; }
-@media (max-width: 940px) { .feat-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; } }
-.feat-copy { display: grid; gap: 26px; min-width: 0; }
-.feat-tags { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.pill-main { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: 7px 12px; border-radius: 99px; color: #fff; background: linear-gradient(90deg, var(--blue), var(--cyan)); box-shadow: 0 0 24px color-mix(in srgb, var(--blue) 50%, transparent); }
-.feat-name { white-space: nowrap; font-family: var(--f-display); font-weight: 900; font-variation-settings: "wdth" 125, "wght" 900; font-size: clamp(3rem, 7.6vw, 7.4rem); line-height: .86; letter-spacing: -0.04em; text-transform: uppercase; overflow: hidden; padding-bottom: .04em; }
-.feat-name .row { display: block; white-space: nowrap; overflow: hidden; padding-bottom: .04em; }
-.feat-name .r2 { font-size: .56em; letter-spacing: -0.03em; }
-.feat-name .r1 .ch { background: linear-gradient(180deg, var(--cyan) 10%, var(--blue) 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; }
-.feat-name .ch { background: linear-gradient(180deg, var(--ink) 20%, var(--blue) 110%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.feat-lede { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink); max-width: 46ch; }
-.feat-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.feat-points li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; color: var(--muted); }
-.feat-points li::before { content: ""; width: 8px; height: 8px; margin-top: .55em; border-radius: 2px; background: var(--cyan); box-shadow: 0 0 10px var(--cyan); transform: rotate(45deg); }
-.feat-cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-.feat-visual { position: relative; min-width: 0; padding: 28px 0; }
-.feat-frame { position: relative; aspect-ratio: 5 / 4; max-width: 100%; border-radius: 28px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 50px 120px -40px color-mix(in srgb, var(--blue) 60%, transparent); transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .8s var(--ease); }
-.feat-frame canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-.float { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 99px; font-family: var(--f-mono); font-size: .74rem; background: var(--glass); border: 1px solid var(--line); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: var(--ink); white-space: nowrap; animation: bob 5s ease-in-out infinite; box-shadow: 0 14px 40px -18px color-mix(in srgb, var(--blue) 70%, transparent); }
-.float i { width: 8px; height: 8px; border-radius: 50%; background: #2FE38A; box-shadow: 0 0 10px #2FE38A; }
-.featured { overflow-x: clip; }
-.f1 { top: 2%; left: -3%; } .f2 { top: 34%; right: -2%; animation-delay: -1.2s; } .f3 { bottom: 24%; left: -6%; animation-delay: -2.4s; } .f4 { bottom: 0; right: 8%; animation-delay: -3.6s; }
-.f2 i { background: var(--cyan); box-shadow: 0 0 10px var(--cyan); } .f3 i { background: var(--blue); box-shadow: 0 0 10px var(--blue); }
-@keyframes bob { 50% { transform: translateY(-10px); } }
-@media (max-width: 940px) { .f1 { left: 0; } .f2 { right: 0; } .f3 { left: 0; } .f4 { right: 4%; } }
-@media (max-width: 480px) { .float { font-size: .64rem; padding: 7px 10px; } }
-.integ-block { display: grid; gap: 22px; }
-.integ-head { display: flex; align-items: center; gap: 18px; }
-.integ-line { flex: 1; height: 1px; background: var(--line); }
-.integs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-@media (max-width: 940px) { .integs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 420px) { .integs { grid-template-columns: minmax(0, 1fr); } }
-.integ { position: relative; isolation: isolate; overflow: hidden; display: grid; gap: 6px; align-content: start; padding: 20px; border-radius: 18px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); transition: transform .6s var(--ease), border-color .4s; }
-.integ::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--blue) 28%, transparent), transparent 70%); opacity: 0; transition: opacity .4s; }
-.integ:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--cyan) 50%, transparent); }
-.integ:hover::before { opacity: 1; }
-.integ b { font-family: var(--f-display); font-variation-settings: "wdth" 110, "wght" 700; font-weight: 700; font-size: 1.12rem; }
-.integ span { color: var(--muted); font-size: .9rem; line-height: 1.45; }
-.card .chips { margin-top: 2px; }
-.card .chip { font-size: .68rem; padding: 4px 9px; }
-
-
 /* ---------- enquiry form ---------- */
 .contact-grid { align-items: start !important; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) !important; }
 @media (max-width: 900px) { .contact-grid { grid-template-columns: minmax(0, 1fr) !important; } }
@@ -420,6 +339,40 @@ main, footer { position: relative; z-index: 1; }
 .done-mail .v { font-family: var(--f-mono); color: var(--ink); user-select: all; overflow-wrap: anywhere; }
 .again { background: none; border: 0; padding: 0; color: var(--muted); font: 500 .85rem var(--f-body); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .again:hover { color: var(--ink); }
+
+/* ---------- expertise (no project or client names) ---------- */
+.expertise .wrap { padding-block: 18vh 10vh; display: grid; gap: 56px; grid-template-columns: minmax(0, 1fr); }
+.xp-lede { color: var(--muted); max-width: 52ch; }
+.xp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 940px) { .xp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .xp-grid { grid-template-columns: minmax(0, 1fr); } }
+.xp { position: relative; isolation: isolate; overflow: hidden; display: grid; grid-template-rows: auto auto 1fr auto; gap: 14px; padding: clamp(22px, 2.4vw, 30px); border-radius: 22px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: transform .6s var(--ease), border-color .4s; }
+.xp::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--blue) 26%, transparent), transparent 70%); opacity: 0; transition: opacity .4s; }
+.xp:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--cyan) 50%, transparent); }
+.xp:hover::before { opacity: 1; }
+.xp-ic { width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 30%, transparent), color-mix(in srgb, var(--cyan) 12%, transparent)); border: 1px solid color-mix(in srgb, var(--blue) 40%, transparent); transition: transform .6s var(--ease); }
+.xp:hover .xp-ic { transform: rotate(-8deg) scale(1.06); }
+.xp-ic svg { width: 24px; height: 24px; fill: none; stroke: var(--cyan); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.xp h3 { font-family: var(--f-display); font-variation-settings: "wdth" 112, "wght" 700; font-weight: 700; font-size: clamp(1.15rem, 1.7vw, 1.45rem); line-height: 1.2; }
+.xp p { color: var(--muted); font-size: .95rem; }
+.xp .chip { font-size: .7rem; }
+
+
+/* ---------- projects ---------- */
+.projects .wrap { padding-block: 12vh 8vh; display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); }
+.pj-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 760px) { .pj-grid { grid-template-columns: minmax(0, 1fr); } }
+.pj { display: grid; grid-template-rows: auto 1fr; border-radius: 24px; border: 1px solid var(--line); background: linear-gradient(160deg, var(--card-a), var(--card-b)); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); overflow: hidden; transition: transform .6s var(--ease), border-color .4s; }
+.pj:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--cyan) 50%, transparent); }
+.pj .shot { aspect-ratio: 16 / 9; max-width: 100%; position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+.pj .shot canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; transform: scale(1.06); transition: transform .9s var(--ease), filter .6s; }
+.pj:hover .shot canvas { transform: scale(1.12); filter: saturate(1.25) brightness(1.1); }
+.pj-body { padding: clamp(20px, 2.4vw, 28px); display: grid; gap: 10px; align-content: start; }
+.pj-body h3 { font-family: var(--f-display); font-variation-settings: "wdth" 110, "wght" 700; font-weight: 700; font-size: clamp(1.25rem, 2vw, 1.7rem); line-height: 1.15; }
+.pj-body p { color: var(--muted); font-size: .95rem; }
+.pj .chips { margin-top: 4px; }
+.pj .chip { font-size: .7rem; }
+@media (max-width: 760px) { .svc { grid-template-columns: minmax(0, 1fr) auto !important; } .svc h3 { overflow-wrap: anywhere; } }
 
 /* ---------- services ---------- */
 .services .wrap { padding-block: 20vh 14vh; display: grid; gap: 56px; }
@@ -526,7 +479,8 @@ footer a:hover { color: var(--ink); }
     <nav class="nav" aria-label="Sections">
       <a href="#about">About</a>
       <a href="#stack">Stack</a>
-      <a href="#work">Work</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#projects">Projects</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -555,7 +509,7 @@ footer a:hover { color: var(--ink); }
       <p class="roles hf">I build <span class="slot"><span class="slot-in"><span>web apps</span><span>mobile apps</span><span>APIs</span><span>databases</span><span>interfaces</span><span>web apps</span></span></span></p>
       <p class="pitch hf">One developer for your whole product. I design it, build the website and the app, write the API and set up the database.</p>
       <div class="hero-cta hf">
-        <a class="btn mag" href="#work"><span>See my work</span><span class="arr">→</span></a>
+        <a class="btn mag" href="#projects"><span>See my work</span><span class="arr">→</span></a>
         <a class="btn ghost mag" href="#contact"><span>Get in touch</span></a>
       </div>
     </div>
@@ -624,96 +578,95 @@ footer a:hover { color: var(--ink); }
     </div>
   </section>
 
-  <section class="featured" id="work">
-    <div class="wrap feat">
-      <div class="feat-grid">
-        <div class="feat-copy">
-          <div class="feat-tags"><span class="pill-main">Main project</span><span class="label">Web · iOS · Android</span></div>
-          <h2 class="feat-name" id="featname" aria-label="P2P Marketplace"><span class="row r1">P2P</span><span class="row r2">Marketplace</span></h2>
-          <p class="feat-lede fx">A peer-to-peer marketplace where people buy and sell with confidence. Every member is verified, every account carries a trust score, buyers and sellers chat in real time, and shoppers earn rewards.</p>
-          <ul class="feat-points fx">
-            <li>Shop and sell flows with instant product search</li>
-            <li>Identity verification and fraud protection on sign-up</li>
-            <li>Trust scores, community, public wishlists and rewards</li>
-            <li>Payments, payouts and sales tax handled end to end</li>
-          </ul>
-        </div>
-        <div class="feat-visual" id="featvisual">
-          <div class="feat-frame tiltable"><canvas data-kind="market" aria-hidden="true"></canvas></div>
-          <span class="float f1"><i></i>ID verified · Stripe Identity</span>
-          <span class="float f2"><i></i>Live chat · GetStream</span>
-          <span class="float f3"><i></i>Search · Typesense</span>
-          <span class="float f4"><i></i>Payouts · Stripe</span>
-        </div>
+  <section class="expertise" id="expertise">
+    <div class="wrap">
+      <div class="sec-intro">
+        <span class="label">Expertise</span>
+        <h2 class="title split">What I'm <span class="hl">good at</span></h2>
+        <p class="xp-lede fx">What I bring to a product and a team, from the first design to a system that scales.</p>
       </div>
-      <div class="integ-block">
-      <div class="integ-head"><span class="label">Integrations I worked with</span><span class="integ-line"></span></div>
-      <div class="integs" id="integs">
-          <div class="integ"><b>Stripe</b><span>Payments and seller payouts</span></div>
-          <div class="integ"><b>Stripe Identity</b><span>ID checks that verify every member</span></div>
-          <div class="integ"><b>Fingerprint Pro</b><span>Device fingerprinting to stop fraud and fake accounts</span></div>
-          <div class="integ"><b>GetStream</b><span>Real-time buyer and seller chat</span></div>
-          <div class="integ"><b>Typesense</b><span>Instant, typo-tolerant product search</span></div>
-          <div class="integ"><b>TaxJar</b><span>Automatic sales tax on every order</span></div>
-          <div class="integ"><b>Twilio</b><span>SMS and phone number verification</span></div>
-          <div class="integ"><b>adjoe</b><span>Rewarded engagement for shoppers</span></div>
-      </div>
+      <div class="xp-grid" id="xpgrid">
+        <article class="xp">
+          <span class="xp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></span>
+          <h3>AI &amp; automation</h3>
+          <p>LLM-powered features, smart scheduling and automated workflows that save people time.</p>
+          <div class="chips"><span class="chip">OpenAI API</span><span class="chip">Python</span><span class="chip">Celery</span></div>
+        </article>
+        <article class="xp">
+          <span class="xp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 21 8l-9 5-9-5 9-5Z"/><path d="m3 12.5 9 5 9-5M3 16.5l9 5 9-5"/></svg></span>
+          <h3>End-to-end product builds</h3>
+          <p>From Figma design to live web and mobile apps. One developer who owns the whole product, so nothing gets lost between teams.</p>
+          <div class="chips"><span class="chip">Next.js</span><span class="chip">React Native</span><span class="chip">NestJS</span><span class="chip">Figma</span></div>
+        </article>
+        <article class="xp">
+          <span class="xp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10h18M7 14.5h4"/></svg></span>
+          <h3>Payments &amp; subscriptions</h3>
+          <p>Secure checkout, recurring billing and automated payouts that keep revenue flowing without manual work.</p>
+          <div class="chips"><span class="chip">Stripe</span><span class="chip">Webhooks</span><span class="chip">Billing</span></div>
+        </article>
+        <article class="xp">
+          <span class="xp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v10H9l-5 4z"/><circle cx="9" cy="11" r=".9"/><circle cx="12.5" cy="11" r=".9"/><circle cx="16" cy="11" r=".9"/></svg></span>
+          <h3>Real-time experiences</h3>
+          <p>Live chat, instant notifications and live order tracking that keep users engaged and coming back.</p>
+          <div class="chips"><span class="chip">WebSockets</span><span class="chip">Push</span><span class="chip">Twilio</span></div>
+        </article>
+        <article class="xp">
+          <span class="xp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.3 7.5 9.5 4.3-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Secure, scalable backends</h3>
+          <p>Clean APIs with authentication, role-based access and caching, built to handle growth from day one.</p>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">RBAC</span></div>
+        </article>
+        <article class="xp">
+          <span class="xp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V11M10 20V5M16 20v-6M2.5 20h19"/></svg></span>
+          <h3>Dashboards &amp; analytics</h3>
+          <p>Admin panels, reports and fast search that turn raw data into clear business decisions.</p>
+          <div class="chips"><span class="chip">MongoDB</span><span class="chip">Analytics</span><span class="chip">Search</span></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="work" id="projects">
-    <div class="work-pin">
-      <div class="wrap work-head">
-        <div>
-          <span class="label">More projects</span>
-          <h2 class="title split">Other things <span class="hl">I've built</span></h2>
-        </div>
-        <div class="work-meta"><div class="work-bar"><i id="workbar"></i></div><span class="work-count" id="workcount">01 / 05</span></div>
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="sec-intro">
+        <span class="label">Projects</span>
+        <h2 class="title split">Things I've <span class="hl">built</span></h2>
       </div>
-      <div class="work-track" id="track">
-        <article class="card" data-cursor="View">
-          <div class="shot"><canvas data-kind="social" aria-hidden="true"></canvas></div>
-          <div class="card-body">
-            <h3>Static</h3>
-            <p>Sports league app with posts, stories, likes, comments and league participation. Built with cross-functional teams across web, mobile and backend.</p>
-            <div class="chips"><span class="chip">Stripe payments</span><span class="chip">Social feed</span><span class="chip">Leagues</span></div>
-            <dl><dt>Role</dt><dd>Node.js developer</dd><dt>Stack</dt><dd>Node.js · PostgreSQL · React · React Native</dd></dl>
-          </div>
-        </article>
-        <article class="card" data-cursor="View">
-          <div class="shot"><canvas data-kind="docs" aria-hidden="true"></canvas></div>
-          <div class="card-body">
-            <h3>Business Application</h3>
-            <p>Cross-platform tool that streamlines client onboarding, FRD preparation and business proposal generation, with one central place for client data and project documents.</p>
-            <div class="chips"><span class="chip">Automated docs</span><span class="chip">Analyst–client collaboration</span><span class="chip">Requirement gathering</span></div>
-            <dl><dt>Role</dt><dd>Backend developer</dd><dt>Stack</dt><dd>Node.js</dd></dl>
-          </div>
-        </article>
-        <article class="card" data-cursor="View">
-          <div class="shot"><canvas data-kind="calendar" aria-hidden="true"></canvas></div>
-          <div class="card-body">
-            <h3>Balance Calendar</h3>
-            <p>A 365-day intelligent reminder system with AI-powered scheduling and cross-platform sync. Overlapping events can be edited, deleted or ignored.</p>
-            <div class="chips"><span class="chip">ChatGPT integration</span><span class="chip">Conflict handling</span><span class="chip">Background tasks</span></div>
-            <dl><dt>Role</dt><dd>Backend developer</dd><dt>Stack</dt><dd>Node.js · PostgreSQL · Python · Celery</dd></dl>
-          </div>
-        </article>
-        <article class="card" data-cursor="View">
+      <div class="pj-grid" id="pjgrid">
+        <article class="pj">
           <div class="shot"><canvas data-kind="school" aria-hidden="true"></canvas></div>
-          <div class="card-body">
-            <h3>Student Management</h3>
-            <p>Backend for a school platform with 5+ user roles, secure login and role-based access, fee payments, subscriptions and an analytics dashboard.</p>
-            <div class="chips"><span class="chip">Role-based access</span><span class="chip">Subscriptions</span><span class="chip">Email & real-time alerts</span></div>
-            <dl><dt>Role</dt><dd>Backend developer</dd><dt>Stack</dt><dd>Node.js · PostgreSQL · Stripe</dd></dl>
+          <div class="pj-body">
+            <span class="label">Web platform</span>
+            <h3>Student Management Platform</h3>
+            <p>Backend for a school platform with 5+ user roles, secure login and role-based access, online fee payments and subscriptions, automated emails, real-time alerts and an analytics dashboard.</p>
+            <div class="chips"><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Stripe</span><span class="chip">Role-based access</span></div>
           </div>
         </article>
-        <article class="card cta">
-          <div class="card-body">
-            <span class="label">Next project</span>
-            <h3>Yours could be next.</h3>
-            <p>Have an idea for an app, a website or a tool? Let's turn it into something people use every day.</p>
-            <a class="btn mag" href="#contact"><span>Start a project</span><span class="arr">→</span></a>
+        <article class="pj">
+          <div class="shot"><canvas data-kind="phone" aria-hidden="true"></canvas></div>
+          <div class="pj-body">
+            <span class="label">Mobile app</span>
+            <h3>Food Delivery App</h3>
+            <p>Order food from nearby restaurants, pay online and track the order live, with a dashboard for restaurants to manage menus and incoming orders.</p>
+            <div class="chips"><span class="chip">Live order tracking</span><span class="chip">Online payments</span><span class="chip">Restaurant dashboard</span></div>
+          </div>
+        </article>
+        <article class="pj">
+          <div class="shot"><canvas data-kind="site" aria-hidden="true"></canvas></div>
+          <div class="pj-body">
+            <span class="label">Website</span>
+            <h3>E-commerce Website</h3>
+            <p>An online store with a product catalogue, search and filters, cart and secure checkout, plus an admin panel for products, orders and stock.</p>
+            <div class="chips"><span class="chip">Product search</span><span class="chip">Secure checkout</span><span class="chip">Admin panel</span></div>
+          </div>
+        </article>
+        <article class="pj">
+          <div class="shot"><canvas data-kind="social" aria-hidden="true"></canvas></div>
+          <div class="pj-body">
+            <span class="label">Automation tool</span>
+            <h3>Social Media Automation Tool</h3>
+            <p>Plan, schedule and auto-publish posts across social platforms from one place, with a content calendar and performance analytics.</p>
+            <div class="chips"><span class="chip">Post scheduling</span><span class="chip">Content calendar</span><span class="chip">Analytics</span></div>
           </div>
         </article>
       </div>
@@ -958,7 +911,7 @@ footer a:hover { color: var(--ink); }
     if (ratio < 1) el.style.fontSize = (fs * ratio * 0.97) + 'px';
     chs.forEach((c, i) => { c.style.setProperty('--w', saved[i][0]); c.style.transform = saved[i][1]; });
   }
-  const fitAll = () => { fit($('#name'), nameRows); fit($('#talk'), talkRows); const fn = $('#featname'); if (fn) fit(fn, [...fn.querySelectorAll('.row')], 125); };
+  const fitAll = () => { fit($('#name'), nameRows); fit($('#talk'), talkRows); };
   fitAll();
   addEventListener('load', () => fitAll());
   if (document.fonts) { try { document.fonts.addEventListener('loadingdone', () => fitAll()); } catch (e) {} }
@@ -1206,11 +1159,10 @@ footer a:hover { color: var(--ink); }
     const vh = innerHeight;
     const sS = stackST ? stackST.start : docTop($('#stack'));
     const sE = stackST ? stackST.end : sS + $('#stack').offsetHeight - vh * 0.6;
-    const wS = workST ? workST.start : docTop($('#projects'));
-    const wE = workST ? workST.end : wS + $('#projects').offsetHeight - vh * 0.6;
-    const fS = docTop($('#work')), fE = fS + $('#work').offsetHeight - vh;
+    const wS = docTop($('#expertise')) - vh * 0.3;
+    const wE = docTop($('#projects')) + $('#projects').offsetHeight - vh * 0.4;
     const cS = docTop($('#contact'));
-    const K = [[0, 0, 1], [vh * 0.7, 0, 0.55], [sS - vh * 0.9, 0, 0.55], [sS, 1, 1], [sE, 1, 1], [fS, 2, 0.4], [Math.max(fS + 1, fE), 2, 0.4], [wS, 2, 1], [wE, 2, 1], [wE + vh * 0.6, 2, 0.35], [cS - vh, 2, 0.35], [cS, 3, 1]];
+    const K = [[0, 0, 1], [vh * 0.7, 0, 0.55], [sS - vh * 0.9, 0, 0.55], [sS, 1, 1], [sE, 1, 1], [wS, 2, 0.5], [wE, 2, 0.5], [wE + vh * 0.6, 2, 0.35], [cS - vh, 2, 0.35], [cS, 3, 1]];
     if (y <= K[0][0]) return { t: K[0][1], dim: K[0][2] };
     for (let i = 0; i < K.length - 1; i++) {
       const a = K[i], b = K[i + 1];
@@ -1398,7 +1350,7 @@ footer a:hover { color: var(--ink); }
     frame.addEventListener('pointermove', e => { const r = frame.getBoundingClientRect(); frame.style.setProperty('--ry', (((e.clientX - r.left) / r.width - .5) * 10).toFixed(2) + 'deg'); frame.style.setProperty('--rx', (-((e.clientY - r.top) / r.height - .5) * 10).toFixed(2) + 'deg'); });
     frame.addEventListener('pointerleave', () => { frame.style.setProperty('--ry', '0deg'); frame.style.setProperty('--rx', '0deg'); });
   }
-  $$('.integ').forEach(t => t.addEventListener('pointermove', e => { const r = t.getBoundingClientRect(); t.style.setProperty('--mx', (e.clientX - r.left) + 'px'); t.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
+  $$('.integ, .xp').forEach(t => t.addEventListener('pointermove', e => { const r = t.getBoundingClientRect(); t.style.setProperty('--mx', (e.clientX - r.left) + 'px'); t.style.setProperty('--my', (e.clientY - r.top) + 'px'); }));
 
   /* ---------- without GSAP: static but complete ---------- */
   if (!hasG) {
@@ -1453,39 +1405,13 @@ footer a:hover { color: var(--ink); }
       }
     });
 
-    const track = $('#track');
-    const dist = () => Math.max(0, track.scrollWidth - innerWidth);
-    const tween = G.to(track, { x: () => -dist(), ease: 'none' });
-    const cards = $$('.card');
-    const skewTo = G.quickTo(cards, 'skewX', { duration: 0.6, ease: 'power3.out' });
-    const count = $('#workcount'), bar = $('#workbar');
-    workST = ST.create({
-      trigger: '#projects', start: 'top top', end: () => '+=' + dist(), pin: true, scrub: 1, animation: tween, invalidateOnRefresh: true,
-      onUpdate: self => {
-        const p = self.progress;
-        bar.style.transform = `scaleX(${p.toFixed(3)})`;
-        count.textContent = String(Math.min(cards.length, Math.floor(p * cards.length * 0.999) + 1)).padStart(2, '0') + ' / ' + String(cards.length).padStart(2, '0');
-        skewTo(G.utils.clamp(-8, 8, self.getVelocity() / -260));
-      }
-    });
-    const settle = () => skewTo(0);
-    ST.addEventListener('scrollEnd', settle);
-    cards.forEach(card => {
-      const cv = card.querySelector('canvas');
-      if (cv) G.fromTo(cv, { xPercent: -8 }, { xPercent: 8, ease: 'none', scrollTrigger: { trigger: card, containerAnimation: tween, start: 'left right', end: 'right left', scrub: true } });
-      G.from(card, { rotateY: -18, transformPerspective: 1200, scale: 0.92, opacity: 0.4, ease: 'none', scrollTrigger: { trigger: card, containerAnimation: tween, start: 'left 100%', end: 'left 60%', scrub: true } });
-    });
-
-    return () => { ST.removeEventListener('scrollEnd', settle); stackST = null; workST = null; panels.forEach((p, k) => p.classList.toggle('on', k === 0)); active = 0; };
-  });
-  mm.add('(max-width: 940px) and (prefers-reduced-motion: no-preference)', () => {
-    $$('.card').forEach(card => G.from(card, { y: 80, opacity: 0, duration: 1.2, ease: 'expo.out', scrollTrigger: { trigger: card, start: 'top 90%' } }));
+    return () => { stackST = null; workST = null; panels.forEach((p, k) => p.classList.toggle('on', k === 0)); active = 0; };
   });
 
   /* active nav */
   const navLinks = $$('.nav a');
-  ['about', 'stack', 'work', 'projects', 'services', 'contact'].forEach(id => {
-    const link = id === 'projects' ? 'work' : id;
+  ['about', 'stack', 'expertise', 'projects', 'services', 'contact'].forEach(id => {
+    const link = id;
     ST.create({ trigger: '#' + id, start: 'top 50%', end: 'bottom 50%', onToggle: self => { if (self.isActive) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + link)); } });
   });
 
@@ -1582,15 +1508,12 @@ footer a:hover { color: var(--ink); }
   });
 
 
-  /* featured project */
-  const featChars = $$('#featname .row').map(splitChars).flat();
-  fitAll();
-  G.from(featChars, { yPercent: 115, rotate: 6, duration: 1.4, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: '#featname', start: 'top 88%' } });
-  G.fromTo(featChars, { '--w': 62 }, { '--w': 125, stagger: 0.04, ease: 'none', scrollTrigger: { trigger: '#featname', start: 'top 90%', end: 'top 45%', scrub: 1 } });
-  G.from('.feat-frame', { y: 120, scale: 0.86, rotateX: 18, transformPerspective: 1200, opacity: 0, ease: 'none', scrollTrigger: { trigger: '#featvisual', start: 'top 95%', end: 'top 45%', scrub: 1 } });
-  $$('.float').forEach((f, i) => G.fromTo(f, { y: 60 + i * 30 }, { y: -40 - i * 20, ease: 'none', scrollTrigger: { trigger: '#featvisual', start: 'top bottom', end: 'bottom top', scrub: true } }));
-  G.from('.integ', { y: 70, opacity: 0, rotateX: -30, transformPerspective: 800, duration: 1.1, ease: 'expo.out', stagger: { each: 0.07, grid: 'auto', from: 'start' }, scrollTrigger: { trigger: '#integs', start: 'top 88%' } });
-  G.from('.integ-line', { scaleX: 0, transformOrigin: '0 50%', duration: 1.6, ease: 'expo.out', scrollTrigger: { trigger: '.integ-head', start: 'top 90%' } });
+  /* project cards */
+  G.from('.pj', { y: 80, opacity: 0, duration: 1.2, ease: 'expo.out', stagger: 0.1, scrollTrigger: { trigger: '#pjgrid', start: 'top 85%' } });
+  $$('.pj .shot canvas').forEach(cv => G.fromTo(cv, { yPercent: -4 }, { yPercent: 4, ease: 'none', scrollTrigger: { trigger: cv.closest('.pj'), start: 'top bottom', end: 'bottom top', scrub: true } }));
+
+  /* expertise cards */
+  G.from('.xp', { y: 70, opacity: 0, rotateX: -18, transformPerspective: 900, duration: 1.1, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: '#xpgrid', start: 'top 85%' } });
 
   /* generic reveals */
   $$('.fx').forEach(el => G.from(el, { y: 60, opacity: 0, duration: 1.3, ease: 'expo.out', scrollTrigger: { trigger: el, start: 'top 92%' } }));
